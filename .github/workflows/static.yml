@@ -32,12 +32,13 @@ jobs:
         uses: actions/setup-node@v5
         with:
           node-version: 24
-          cache: npm
 
       - name: Install dependencies
+        working-directory: ./repository
         run: npm ci
 
-      - name: Compile TypeScript
+      - name: Build TypeScript
+        working-directory: ./repository
         run: npx tsc
 
       - name: Setup Pages
@@ -51,5 +52,4 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
 
