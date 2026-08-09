@@ -1,0 +1,1 @@
+export type Kategorie = "katzen" | "pflanzen" | "haushalt";
